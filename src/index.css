@@ -1,0 +1,1305 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+/* ARCSEG — paleta verde-petroleo (teste 03: mais neutra e profunda) */
+:root {
+  --forest: #0B2221;
+  --forest-deep: #071816;
+  --forest-mid: #143B34;
+  --green: #00D67F;
+  --green-dark: #007F50;
+  --green-hover: #00F08E;
+  --ink: #18261E;
+  --muted: #607568;
+  --line: #DCE8DF;
+  --soft: #F4F8F5;
+}
+@layer base{html{scroll-behavior:smooth}body{font-family:Manrope,sans-serif;color:var(--ink);background:white}button{cursor:pointer}button,a,input,select,textarea{outline-offset:3px}}
+*{box-sizing:border-box}.site{overflow:hidden}.container{width:min(1180px,calc(100% - 40px));margin:auto}.dark{color:white;background:var(--forest)}
+header{position:fixed;z-index:50;inset:0 0 auto;height:76px;background:#0B2221ED;border-bottom:1px solid #ffffff17;backdrop-filter:blur(18px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;color:white;text-decoration:none;font:700 26px/1 'Space Grotesk';letter-spacing:-1px}.logo>span strong{color:var(--green)}.logo small{display:block;margin-top:4px;color:#9CB8AA;font:700 7px Manrope;letter-spacing:1.6px}.logo>b{width:29px;height:28px;display:flex;align-items:flex-end;gap:3px;transform:skew(-15deg)}.logo>b i{width:8px;height:14px;background:var(--green)}.logo>b i:nth-child(2){height:22px}.logo>b i:nth-child(3){height:28px;background:var(--green)}nav{display:flex;align-items:center;gap:28px}nav>button{border:0;background:none;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:color .2s}.navCta{display:flex;align-items:center;justify-content:center;padding:12px 20px;min-height:44px;border-radius:5px;background:var(--green);color:var(--forest-deep);text-decoration:none;text-align:center;white-space:nowrap;font-size:12px;font-weight:800;text-transform:uppercase}.menu{display:none;border:0;background:none;color:white}
+.hero{position:relative;min-height:820px;display:flex;align-items:center;padding:145px 0 85px;color:white;background:radial-gradient(circle at 85% 25%,#0E5B46,transparent 33%),linear-gradient(120deg,var(--forest-deep),#143B34)}.grid{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(#fff2 1px,transparent 1px),linear-gradient(90deg,#fff2 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(90deg,#000,transparent)}.heroInner{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}.tag{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;color:#A9EACB;font-size:9px;font-weight:800;letter-spacing:1.5px}.tag svg{color:var(--green)}.hero h1{font:600 clamp(42px,4.4vw,68px)/1.02 'Space Grotesk';letter-spacing:-3px}.hero h1 em{font-style:normal;color:#8FFFC9}.heroCopy>p{margin-top:26px;color:#BED6C8;font-size:15px;line-height:1.75}.slogan{display:block;margin-top:19px;font-size:14px;line-height:1.5}.slogan:before{content:'';display:inline-block;width:25px;height:2px;margin:0 10px 3px 0;background:var(--green)}.actions{display:flex;gap:12px;margin-top:32px}.btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:0 23px;border:1px solid transparent;border-radius:5px;text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.6px;transition:.25s}.btn:hover{transform:translateY(-3px)}.green{color:var(--forest-deep);background:var(--green)}.outline{color:white;background:#ffffff08;border-color:#ffffff38}.forest{color:white;background:var(--forest)}.trust{display:flex;flex-wrap:wrap;gap:14px 18px;margin-top:28px;color:#D4E9DD;font-size:11px;font-weight:700;line-height:1.45;text-transform:uppercase}.trust span{display:flex;align-items:center;gap:6px}.trust svg{color:var(--green)}.heroVisual{position:relative;height:540px}.heroVisual>img{width:100%;height:100%;object-fit:cover;border-radius:3px 35px 3px 3px;filter:saturate(.8);box-shadow:0 35px 70px #0006}.heroVisual:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#07181666,transparent);pointer-events:none}.float,.intel{position:absolute;z-index:2;background:#0D302ADF;border:1px solid #ffffff25;backdrop-filter:blur(15px);box-shadow:0 15px 35px #0005}.f1{left:-25px;top:70px;display:flex;align-items:center;gap:12px;padding:14px}.f1 svg{color:#83F1B6}.f1 small,.f1 b{display:block}.f1 small{color:#98B5A5;font-size:7px;letter-spacing:1px}.f1 b{margin-top:5px;font-size:10px}.f2{right:-20px;bottom:45px;width:250px;padding:17px}.f2 span{color:#BED2C5;font-size:8px}.f2 b{float:right}.f2 i{clear:both;display:block;width:90%;height:4px;margin-top:12px;background:var(--green)}.intel{right:15px;top:30px;padding:10px 13px;background:#fff;color:#0aac5b;font-weight:800}.intel small{margin-left:10px;padding-left:10px;border-left:1px solid #ccc;color:#657D70;font-size:7px;text-transform:uppercase}
+.benefits .four{display:grid;grid-template-columns:repeat(4,1fr)}.four article{position:relative;min-height:220px;padding:36px 28px;border-right:1px solid var(--line);transition:.25s}.four article:first-child{border-left:1px solid var(--line)}.four article:hover{z-index:2;transform:translateY(-7px);background:var(--forest);color:white;box-shadow:0 20px 40px #0B222125}.four article>small,.solutionGrid article>small{position:absolute;right:20px;top:18px;color:#B8CEC0;font-size:8px}.icon{width:47px;height:47px;display:grid;place-items:center;border-radius:5px;color:var(--green);background:#E6F9ED}.four h3,.solutionGrid h3{margin-top:22px;font:700 15px 'Space Grotesk'}.four p,.solutionGrid p{margin-top:9px;color:var(--muted);font-size:11px;line-height:1.7}.four article:hover p{color:#B1C9BA}
+.campaign,.testimonials,.autonomo,.solutions,.lead,.social,.faq{padding:105px 0}.heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:45px}.title{max-width:650px}.title>span,.over{display:block;margin-bottom:14px;color:var(--green);font-size:8px;font-weight:800;letter-spacing:1.7px}.title>span:before,.over:before{content:'';display:inline-block;width:25px;height:2px;margin:0 10px 3px 0;background:var(--green)}.title h2{font:600 clamp(31px,3.4vw,48px)/1.08 'Space Grotesk';letter-spacing:-2px}.title>p{max-width:580px;margin-top:16px;color:var(--muted);font-size:13px;line-height:1.7}.title.light h2{color:white}.title.light>p{color:#B3CDBD}.title.light>span{color:#90E9B9}.arrows{display:flex;gap:8px}.arrows button{width:43px;height:43px;border:1px solid #ffffff26;background:none;color:white}.slider{position:relative;min-height:270px}.slider article{position:absolute;inset:0;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:43px 48px;opacity:0;transform:translateX(20px);pointer-events:none;border:1px solid #ffffff19;background:linear-gradient(110deg,#15533C,#0D3529);transition:.5s}.slider article.active{opacity:1;transform:none;pointer-events:auto}.round{width:70px;height:70px;display:grid;place-items:center;border-radius:50%;color:var(--green);background:#27c56d18;border:1px solid #27c56d40}.slider article small{color:#80EBB3;font-size:8px;letter-spacing:1.5px}.slider h3{margin-top:8px;font:600 29px 'Space Grotesk'}.slider p{margin-top:8px;color:#B3C8BB;font-size:12px}.slider article button,.proCards button,.solutionGrid button,.socialGrid article button{display:flex;align-items:center;gap:8px;margin-top:20px;border:0;background:none;color:#82F0B8;font-size:8px;font-weight:800;text-transform:uppercase}.slider article>b{color:#ffffff0e;font:700 86px 'Space Grotesk'}.dots{display:flex;justify-content:center;gap:7px;margin-top:22px}.dots button{width:24px;height:3px;border:0;background:#2E5B49}.dots button.active{width:45px;background:var(--green)}
+.score{display:flex;align-items:center;gap:12px}.score>b{color:var(--green);font:700 48px 'Space Grotesk'}.score>b small{color:var(--green);font-size:20px}.score span{color:var(--muted);font-size:9px;text-transform:uppercase}.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.reviews article{position:relative;min-height:260px;padding:27px;border:1px solid var(--line);transition:.25s}.reviews article:hover{transform:translateY(-5px);box-shadow:0 18px 40px #0B222118}.reviews article>svg{position:absolute;right:25px;color:#DCECE2}.stars{color:#f0b323;font-size:13px;letter-spacing:2px}.reviews article>p{min-height:110px;margin-top:18px;color:#576D5F;font-size:11px;line-height:1.75}.person{display:flex;align-items:center;gap:11px;padding-top:16px;border-top:1px solid #E7F0EA}.person>b{width:37px;height:37px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:var(--forest-deep);font-size:9px}.person strong,.person small{display:block}.person strong{font-size:10px}.person small{margin-top:3px;color:#839C8C;font-size:8px}
+.autonomo{background:#0D3529}.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:75px;align-items:center}.pro{display:flex;align-items:center;gap:13px;margin:28px 0;color:var(--green)}.pro span{padding-left:13px;border-left:1px solid #ffffff28}.pro small,.pro b{display:block}.pro small{color:#77E8AC;font-size:7px;letter-spacing:1.3px}.pro b{margin-top:4px;color:white;font-size:11px}.proCards{display:grid;grid-template-columns:1fr 1fr;gap:12px}.proCards article{display:flex;gap:14px;padding:22px;border:1px solid #ffffff18;background:#ffffff08}.proCards article:last-child{grid-column:span 2}.proCards .icon{flex:none;color:var(--green);background:#27c56d18}.proCards h3{font:600 13px 'Space Grotesk'}.proCards p{margin-top:6px;color:#AAC8B6;font-size:9px}
+.solutions{background:var(--soft)}.solutions>.container>.title,.social .title{margin:auto;text-align:center}.solutionGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:48px}.solutionGrid article{position:relative;min-height:270px;padding:25px;background:white;border:1px solid #DDE9E1;transition:.25s}.solutionGrid article:hover{transform:translateY(-6px);box-shadow:0 20px 40px #0B222115}.center{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:36px}.center>span{display:flex;align-items:center;gap:7px;color:#768F80;font-size:8px}
+.stats{padding:85px 0;background:#0C3528}.statsInner{display:grid;grid-template-columns:.65fr 1.35fr;gap:55px;align-items:center}.stats h2{font:600 35px/1.15 'Space Grotesk'}.statGrid{display:grid;grid-template-columns:repeat(5,1fr)}.statGrid div{padding:14px 17px;border-left:1px solid #ffffff20}.statGrid strong{display:block;font:600 27px 'Space Grotesk'}.statGrid span{display:block;margin-top:7px;color:#A6C5B3;font-size:7px;text-transform:uppercase;line-height:1.5}
+.lead{background:linear-gradient(120deg,var(--forest-deep),#143B34)}.leadSplit{align-items:start}.contacts{margin-top:38px}.contacts p{display:flex;align-items:center;gap:13px;margin-top:20px}.contacts p>svg{padding:9px;box-sizing:content-box;color:var(--green);border:1px solid #ffffff25}.contacts small,.contacts b{display:block}.contacts small{color:#95B7A5;font-size:7px;letter-spacing:1px}.contacts b{margin-top:4px;font-size:10px}form{padding:33px;color:var(--ink);background:white;box-shadow:0 30px 60px #0005}.step{display:flex;align-items:center;gap:12px;margin-bottom:15px}.step~.step{margin-top:25px;padding-top:23px;border-top:1px solid var(--line)}.step>b{color:var(--green);font-size:10px}.step span{padding-left:12px;border-left:1px solid var(--line)}.step strong,.step small{display:block}.step strong{font-size:11px}.step small{color:#8DA497;font-size:8px}.profiles,.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}.profiles button{min-height:54px;display:flex;align-items:center;gap:10px;padding:0 15px;border:1px solid var(--line);background:white;color:#536B5E;font-size:9px;font-weight:700}.profiles button.active{border-color:var(--green);background:#E8FFF3;color:var(--green)}.fields{margin-top:18px}.fields label{color:#526D5D;font-size:7px;font-weight:800;text-transform:uppercase}.fields input,.fields select,.fields textarea{width:100%;margin-top:7px;padding:11px 12px;border:1px solid #DCE8E0;background:#FAFDFB;color:var(--ink);font-size:9px}.fields .full{grid-column:span 2}.consent{display:block;margin:14px 0;color:#768F80;font-size:8px}.consent input{margin-right:7px;accent-color:var(--green)}.submit{width:100%}
+.social .title{margin-bottom:45px}.socialGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.socialGrid article{min-height:280px;display:flex;flex-direction:column;align-items:flex-start;padding:25px;border:1px solid var(--line)}.socialGrid h3{margin-top:23px;font:700 16px 'Space Grotesk'}.socialGrid p{margin-top:8px;color:var(--muted);font-size:10px;line-height:1.7}.socialGrid article button{margin-top:auto}.socialGrid aside{padding:27px;color:white;text-align:center;background:var(--forest)}.qr{width:125px;height:125px;display:grid;grid-template-columns:repeat(9,1fr);gap:2px;margin:0 auto 18px;padding:10px;background:white}.qr i.on{background:var(--forest)}.socialGrid aside small,.socialGrid aside b,.socialGrid aside span{display:block}.socialGrid aside small{color:#7CF0B5;font-size:7px;letter-spacing:1.3px}.socialGrid aside b{margin-top:8px;font:600 17px 'Space Grotesk'}.socialGrid aside span{margin-top:7px;color:#A6C1B0;font-size:7px}
+.faq{background:var(--soft)}.faq .split{align-items:start}.faqItem{border-bottom:1px solid #D9E7DE}.faqItem>button{width:100%;min-height:72px;display:grid;grid-template-columns:30px 1fr auto;align-items:center;border:0;background:none;text-align:left}.faqItem>button span{color:var(--green);font-size:8px}.faqItem>button b{font:600 12px 'Space Grotesk'}.faqItem>div{display:grid;grid-template-rows:0fr;transition:.3s}.faqItem>div p{overflow:hidden;color:var(--muted);font-size:10px;line-height:1.7}.faqItem.open>div{grid-template-rows:1fr}.faqItem.open>div p{padding:0 30px 20px}.faqItem.open>button svg{transform:rotate(180deg)}
+.final{padding:80px 0;background:linear-gradient(120deg,#007F50,#00B86B)}.finalInner{display:flex;align-items:center;justify-content:space-between;gap:45px}.final h2{max-width:680px;font:600 37px/1.15 'Space Grotesk';letter-spacing:-1.5px}.final h2 em{color:#C7FFE7;font-style:normal}.final p{margin-top:12px;color:#D5FFEC;font-size:11px}.finalInner>div:last-child{display:grid;gap:9px;flex:none}
+footer{padding-top:70px;color:#A0BAAB;background:var(--forest-deep)}.footerGrid{display:grid;grid-template-columns:1.5fr .7fr .8fr 1fr;gap:60px;padding-bottom:55px}.footerGrid h3{margin-bottom:20px;color:white;font:600 11px 'Space Grotesk'}.footerGrid p{margin-top:20px;font-size:9px;line-height:1.8}.footerGrid button{display:block;margin-bottom:11px;border:0;background:none;color:#A6C3B1;font-size:8px}.bottom{min-height:65px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff16;font-size:7px}.bottom em{color:var(--green);font-style:normal;font-size:10px}
+@media(max-width:980px){nav{position:fixed;inset:76px 0 auto;padding:22px;display:grid;gap:8px;background:var(--forest);transform:translateY(-130%);transition:.3s}nav.open{transform:none}nav>button{text-align:left;padding:9px}.menu{display:block}.heroInner{grid-template-columns:1fr}.heroVisual{height:500px}.benefits .four{grid-template-columns:1fr 1fr}.reviews{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.solutionGrid{grid-template-columns:1fr 1fr}.statsInner{grid-template-columns:1fr}.socialGrid{grid-template-columns:repeat(3,1fr)}.socialGrid aside{grid-column:span 3}.footerGrid{grid-template-columns:1.4fr 1fr 1fr}.footerGrid>div:last-child{grid-column:1/-1}}
+@media(max-width:640px){.container{width:calc(100% - 28px)}header{height:68px}nav{top:68px}.hero{min-height:auto;padding:115px 0 70px}.hero h1{font-size:43px}.actions{display:grid}.heroVisual{height:390px}.f1{left:-5px;top:25px}.f2{right:-5px;bottom:20px;width:210px}.intel{display:none}.benefits .four,.reviews,.solutionGrid,.socialGrid{grid-template-columns:1fr}.four article{border-left:1px solid var(--line);border-bottom:1px solid var(--line)}.campaign,.testimonials,.autonomo,.solutions,.lead,.social,.faq{padding:75px 0}.heading{display:grid;gap:25px}.slider{min-height:420px}.slider article{grid-template-columns:1fr;align-content:center;padding:28px}.slider article>b{display:none}.score{margin-top:10px}.reviews article{min-height:auto}.reviews article>p{min-height:auto;margin-bottom:25px}.proCards{grid-template-columns:1fr}.proCards article:last-child{grid-column:auto}.center{display:grid;text-align:center}.statGrid{grid-template-columns:1fr 1fr;gap:25px}.statGrid div:last-child{grid-column:span 2}.profiles,.fields{grid-template-columns:1fr}.fields .full{grid-column:auto}form{padding:24px 18px}.socialGrid aside{grid-column:auto}.finalInner{display:grid}.final h2{font-size:31px}.footerGrid{grid-template-columns:1fr 1fr;gap:40px 20px}.footerGrid>div:first-child,.footerGrid>div:last-child{grid-column:1/-1}.bottom{padding:22px 0;display:grid;gap:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* ARCSEG institutional refinement */
+.dark{background:var(--forest)}
+header{background:#0B2221F2}
+.logo{width:165px;height:52px;padding:0;border:0;border-radius:0;background:transparent}
+.logo img{display:block;width:100%;height:100%;object-fit:contain}
+.footerLogo{width:172px;height:58px}
+.nav{gap:22px}
+.navCta{flex:none;background:var(--green);color:#07150f;box-shadow:0 8px 24px #00d67f2e}
+.navCta:hover,.green:hover{background:var(--green-hover)}
+nav>button:hover{color:var(--green)}
+.mobileContact{display:none}
+.hero{background:radial-gradient(circle at 84% 24%,#0E5B46 0,transparent 33%),linear-gradient(120deg,var(--forest-deep),var(--forest) 65%,#102C26);background-attachment:fixed}
+.hero h1 em{color:var(--green)}
+.tag{color:#8fffc9}
+.intel{color:var(--green-dark)}
+.benefits{padding:95px 0 0}
+.benefits>.container>.title{margin-bottom:42px}
+.credibilityGrid{grid-template-columns:repeat(3,1fr)!important}
+.credibilityGrid article{border-top:1px solid var(--line)}
+.four article:hover{background:#10211F;box-shadow:0 20px 40px #0B222124}
+.icon{color:var(--green-dark);background:#e5fff4}
+.campaign{background:var(--forest)}
+.slider article{background:linear-gradient(110deg,#102724,#0D3128)}
+.slider article small,.slider article button,.proCards button,.solutionGrid button,.socialGrid article button{color:var(--green)}
+.arrows button:hover{background:var(--green);color:#07150f;border-color:var(--green)}
+.score>b{color:var(--green-dark)}
+.proofTabs{display:flex;gap:8px;margin:-15px 0 28px;padding:5px;width:max-content;border-radius:6px;background:var(--soft)}
+.proofTabs button{padding:12px 18px;border:0;border-radius:4px;background:transparent;color:var(--muted);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.proofTabs button.active{background:var(--forest);color:#fff;box-shadow:0 6px 18px #0B222120}
+.person img{width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover}
+.person a{display:flex;align-items:center;gap:4px;margin-top:5px;color:var(--green-dark);font-size:7px;text-decoration:none}
+.videoReviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.videoCard{padding:0 0 20px;overflow:hidden;border:1px solid var(--line);background:#fff;text-align:left;transition:.25s}
+.videoCard:hover{transform:translateY(-6px);box-shadow:0 20px 40px #0B22211A}
+.videoCard>div{position:relative;height:210px;overflow:hidden}
+.videoCard img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.videoCard:hover img{transform:scale(1.04)}
+.videoCard>div span{position:absolute;inset:50% auto auto 50%;width:52px;height:52px;display:grid;place-items:center;transform:translate(-50%,-50%);border-radius:50%;background:var(--green);color:#07150f;font-size:15px;box-shadow:0 0 0 8px #00d67f33}
+.videoCard>strong,.videoCard>small{display:block;margin-inline:20px}
+.videoCard>strong{margin-top:18px;font:700 15px 'Space Grotesk'}
+.videoCard>small{margin-top:5px;color:var(--muted);font-size:8px;text-transform:uppercase}
+.autonomo{background:var(--forest)}
+.training{padding:105px 0;background:#fff}
+.trainingIntro>.title{text-align:center;margin:auto}
+.trainingIntro>.title p{margin-inline:auto}
+.trainingGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:46px 0 32px}
+.trainingGrid article{padding:28px;border:1px solid var(--line);background:var(--soft);transition:.25s}
+.trainingGrid article:hover{transform:translateY(-6px);border-color:var(--green);background:#fff;box-shadow:0 16px 35px #0B222112}
+.trainingGrid h3{margin-top:20px;font:700 14px 'Space Grotesk'}
+.trainingGrid p{margin-top:8px;color:var(--muted);font-size:10px;line-height:1.6}
+.trainingIntro>.btn{display:flex;width:max-content;margin:auto}
+.stats{background:var(--forest)}
+.partners{padding:100px 0;background:var(--soft)}
+.partners .title{text-align:center;margin:auto}
+.partners .title p{margin-inline:auto}
+.partnerGrid{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:12px;margin-top:45px}
+.partnerGrid article{min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;border:1px solid var(--line);background:#fff;text-align:center;transition:.25s}
+.partnerGrid article:hover{transform:translateY(-5px);border-color:var(--green)}
+.partnerGrid b{font:700 17px 'Space Grotesk';letter-spacing:-.5px}
+.partnerGrid span{margin-top:8px;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.6px}
+.partnerGrid svg{margin-bottom:10px;color:var(--green-dark)}
+.partnerGrid .intelbrasPartner{color:#07150f;background:var(--green);border-color:var(--green)}
+.intelbrasPartner b{font-size:30px;letter-spacing:-2px}
+.intelbrasPartner span{color:#075837}
+.lead{background:linear-gradient(120deg,var(--forest-deep),var(--forest))}
+.step>b,.profiles button.active,.faqItem>button span{color:var(--green-dark)}
+.profiles button.active{border-color:var(--green);background:#edfff7}
+.fields input:focus,.fields select:focus,.fields textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #00d67f1a;outline:none}
+.fields input:user-invalid,.fields select:user-invalid{border-color:#cf4c4c;background:#fff7f7}
+.fields input:user-valid,.fields select:user-valid{border-color:#74c9a7}
+.consent input{accent-color:var(--green-dark)}
+.socialLink{display:flex;align-items:center;gap:8px;margin-top:auto;color:var(--green-dark);font-size:8px;font-weight:800;text-transform:uppercase;text-decoration:none}
+.final{background:linear-gradient(120deg,#007f50,#00B86B)}
+.final h2 em{color:#c7ffe7}
+.final p{color:#d5ffec}
+.final .finalContact{margin-top:8px;color:#b9f5da;font-size:8px;text-transform:uppercase;letter-spacing:.35px}
+.footerGrid a{color:var(--green);text-decoration:none}
+.floatingWhatsapp{position:fixed;z-index:60;right:24px;bottom:24px;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:#07150f;box-shadow:0 10px 30px #00d67f66;text-decoration:none;animation:whatsappPulse 2.6s infinite}
+.floatingWhatsapp>span{position:absolute;right:70px;width:max-content;padding:9px 12px;border-radius:4px;background:var(--forest);color:#fff;font-size:9px;opacity:0;transform:translateX(8px);pointer-events:none;transition:.25s}
+.floatingWhatsapp:hover{background:var(--green-hover);animation-play-state:paused}
+.floatingWhatsapp:hover>span{opacity:1;transform:none}
+@keyframes whatsappPulse{0%,100%{box-shadow:0 10px 30px #00d67f55,0 0 0 0 #00d67f55}50%{box-shadow:0 10px 30px #00d67f55,0 0 0 12px #00d67f00}}
+.videoModal{position:fixed;z-index:100;inset:0;display:grid;place-items:center;padding:28px;background:#061311D9;backdrop-filter:blur(14px)}
+.modalContent{width:min(1000px,100%);overflow:hidden;border:1px solid #ffffff26;background:var(--forest);color:#fff;box-shadow:0 30px 90px #000}
+.modalContent video{display:block;width:100%;max-height:70vh;background:#000}
+.modalContent>div{padding:22px 26px}.modalContent span{color:var(--green);font-size:8px;font-weight:800;letter-spacing:1.3px}.modalContent h3{margin-top:6px;font:600 23px 'Space Grotesk'}.modalContent p{margin-top:5px;color:#AFC6B7;font-size:10px}
+.modalClose{position:fixed;z-index:2;right:24px;top:24px;width:44px;height:44px;display:grid;place-items:center;border:1px solid #ffffff38;border-radius:50%;background:var(--forest);color:#fff}
+
+@media(max-width:980px){
+  header .nav{gap:10px}.logo{width:130px;height:44px}.navCta{margin-left:auto;padding:11px 13px}.menu{display:block}
+  nav{background:var(--forest)}.mobileContact{display:grid;gap:6px;margin-top:10px;padding:16px;border-top:1px solid #ffffff1f;color:#B6CDBD;font-size:9px}.mobileContact b{color:var(--green)}
+  .credibilityGrid{grid-template-columns:1fr 1fr!important}.videoReviews{grid-template-columns:1fr 1fr}.trainingGrid{grid-template-columns:1fr 1fr}.partnerGrid{grid-template-columns:repeat(3,1fr)}.intelbrasPartner{grid-column:span 2}
+}
+@media(max-width:640px){
+  .logo{width:104px;height:38px;padding:0}.navCta{min-height:38px;padding:0 10px;font-size:9px}.menu{padding:5px}
+  .hero{background-attachment:scroll}.hero h1{font-size:40px}.heroCopy>p{font-size:13px}.actions{grid-template-columns:1fr 1fr}.trust{display:grid;grid-template-columns:1fr 1fr}
+  .benefits{padding-top:72px}.credibilityGrid{grid-template-columns:1fr!important}.videoReviews,.trainingGrid,.partnerGrid{grid-template-columns:1fr}.intelbrasPartner{grid-column:auto}.proofTabs{width:100%}.proofTabs button{flex:1;padding-inline:8px}.videoCard>div{height:190px}
+  .training,.partners{padding:75px 0}.floatingWhatsapp{right:16px;bottom:16px;width:54px;height:54px}.floatingWhatsapp>span{display:none}
+}
+
+
+/* ARCSEG — Legibilidade dos indicadores sobre a imagem do Hero */
+.heroVisual .f1 small {
+  font-size: 9px;
+}
+.heroVisual .f1 b {
+  font-size: 12px;
+}
+.heroVisual .intel {
+  font-size: 18px;
+}
+.heroVisual .intel small {
+  font-size: 9px;
+}
+.heroVisual .f2 span {
+  font-size: 10px;
+}
+.heroVisual .f2 b {
+  font-size: 19px;
+}
+
+
+/* ============================================================
+   ARCSEG — Legibilidade geral (seções após o Hero)
+   Ajuste pontual de tipografia; não altera Header ou Hero.
+   ============================================================ */
+
+/* Títulos de seção: mantidos no tamanho atual. Aumentamos
+   as legendas e textos de apoio, antes pequenos demais. */
+.title > span {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--green-dark);
+}
+.title.light > span {
+  color: #90E9B9;
+}
+.over {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.title > p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Benefícios / "Por que escolher a ARCSEG?" */
+.benefits .four h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+.benefits .four p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.benefits .four article > small {
+  font-size: 11px;
+}
+
+/* Campanhas e soluções empresariais */
+.slider article small {
+  font-size: 11px;
+  line-height: 1.4;
+}
+.slider p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.slider article button {
+  font-size: 12px;
+}
+
+/* Depoimentos em texto e vídeo */
+.score span {
+  font-size: 12px;
+  line-height: 1.55;
+}
+.proofTabs button {
+  font-size: 13px;
+  line-height: 1.3;
+}
+.reviews article > p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.person strong {
+  font-size: 14px;
+}
+.person small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.person a {
+  font-size: 12px;
+}
+.videoCard > strong {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.videoCard > small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Universo do profissional autônomo */
+.pro small {
+  font-size: 11px;
+}
+.pro b {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.proCards h3 {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.proCards p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.proCards button {
+  font-size: 12px;
+}
+
+/* Treinamentos e capacitações */
+.trainingGrid h3 {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.trainingGrid p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Catálogo de soluções */
+.solutionGrid h3 {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.solutionGrid p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.solutionGrid article > small {
+  font-size: 11px;
+}
+.solutionGrid button {
+  font-size: 12px;
+}
+.center > span {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Números e marcas parceiras */
+.statGrid span {
+  font-size: 11px;
+  line-height: 1.55;
+}
+.partnerGrid span {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Contato e formulário */
+.contacts small {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.contacts b {
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.step > b {
+  font-size: 13px;
+}
+.step strong {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.step small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.profiles button {
+  font-size: 13px;
+  line-height: 1.35;
+}
+.fields label {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.fields input,
+.fields select,
+.fields textarea {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.consent {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Redes sociais e QR Code */
+.socialGrid h3 {
+  font-size: 18px;
+}
+.socialGrid p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.socialLink,
+.socialGrid article button {
+  font-size: 12px;
+}
+.socialGrid aside small {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.socialGrid aside b {
+  font-size: 18px;
+  line-height: 1.35;
+}
+.socialGrid aside span {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Perguntas frequentes */
+.faqItem > button span {
+  font-size: 12px;
+}
+.faqItem > button b {
+  font-size: 16px;
+  line-height: 1.45;
+}
+.faqItem > div p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Chamada final e botões do corpo.
+   A classe .btn é usada no Hero, então limitamos às
+   outras seções para preservar a versão aprovada. */
+main section:not(.hero) .btn {
+  font-size: 12px;
+}
+.final p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+.final .finalContact {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Rodapé e indicadores secundários */
+.footerGrid h3 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.footerGrid p {
+  font-size: 13px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.footerGrid button {
+  font-size: 12px;
+  line-height: 1.55;
+  text-align: left;
+}
+.bottom {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.bottom em {
+  font-size: 12px;
+}
+
+/* Janela de vídeo e etiqueta do WhatsApp flutuante */
+.modalContent span {
+  font-size: 11px;
+}
+.modalContent p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.floatingWhatsapp > span {
+  font-size: 11px;
+}
+
+/* Refinamentos de legibilidade para telas menores */
+@media (max-width: 640px) {
+  .title > p {
+    font-size: 15px;
+  }
+  .benefits .four h3 {
+    font-size: 17px;
+  }
+  .benefits .four p,
+  .trainingGrid p,
+  .solutionGrid p,
+  .socialGrid p,
+  .faqItem > div p {
+    font-size: 14px;
+  }
+  .faqItem > button {
+    gap: 7px;
+    padding: 12px 0;
+  }
+  .final p {
+    font-size: 14px;
+  }
+}
+
+/* Logo do WhatsApp no botão flutuante — mantém hover, pulso e dimensões originais */
+.floatingWhatsapp > img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* ARCSEG — títulos auxiliares e centralização de seções */
+/* Centraliza a descrição dentro do mesmo eixo do título de Soluções Corporativas. */
+.solutions > .container > .title > p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Padrão das etiquetas de seção: texto um pouco maior e o traço na mesma cor. */
+.title > span,
+.over {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #008A55;
+}
+.title > span::before,
+.over::before {
+  background-color: currentColor;
+}
+
+/* Em fundos escuros, o verde claro mantém os rótulos legíveis. */
+.dark .title > span,
+.title.light > span,
+.dark .over {
+  color: #8AEAB8;
+}
+
+/* ARCSEG — contato: Instagram clicável e campos mais discretos */
+.contacts .contactInstagram {
+  display: inline-block;
+  margin-top: 4px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+.contacts .contactInstagram:hover,
+.contacts .contactInstagram:focus-visible {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+/* Placeholders só ficam sutis enquanto os campos estão vazios.
+   Texto digitado pelo visitante mantém a cor e contraste normais. */
+.fields input::placeholder,
+.fields textarea::placeholder {
+  color: #8B9F94;
+  font-weight: 400;
+  opacity: 1;
+}
+.fields select:invalid {
+  color: #8B9F94;
+  font-weight: 400;
+}
+.fields select option {
+  color: var(--ink);
+}
+
+
+/* ARCSEG — ícone real do WhatsApp na chamada final */
+.final .finalWhatsappIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ARCSEG — centralização do texto na seção de redes sociais */
+.social > .container > .title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.social > .container > .title > p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+/* ============================================================
+   ARCSEG — Hero para celulares (desktop preservado)
+   Centraliza o titulo e melhora leitura da descricao e botoes.
+   ============================================================ */
+@media (max-width: 640px) {
+  .hero .heroCopy h1 {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero .heroCopy > p {
+    margin-top: 18px; /* antes: 26px; aproxima a descricao do titulo no mobile */
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero .actions {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .hero .actions .btn {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 9px;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .hero .actions .btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+}
+
+/* Celulares bem estreitos: garantir que os dois botoes caibam. */
+@media (max-width: 360px) {
+  .hero .actions {
+    gap: 8px;
+  }
+
+  .hero .actions .btn {
+    font-size: 11px;
+    padding-inline: 6px;
+    gap: 6px;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Header mobile: logo e CTA mais destacados.
+   Acima de 640px, o desktop permanece inalterado.
+   ============================================================ */
+.navCtaCompact {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  header .nav {
+    gap: 8px;
+  }
+
+  header .logo {
+    width: 132px;
+    height: 48px;
+    flex: 0 0 auto;
+  }
+
+  header .navCta {
+    width: 140px;
+    min-width: 0;
+    min-height: 46px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  header .navCtaFull {
+    display: none;
+  }
+
+  header .navCtaCompact {
+    display: inline;
+  }
+
+  header .menu {
+    flex: 0 0 auto;
+  }
+}
+
+/* Evita aperto em telas de 320–360px. */
+@media (max-width: 360px) {
+  header .nav {
+    gap: 6px;
+  }
+
+  header .logo {
+    width: 112px;
+    height: 43px;
+  }
+
+  header .navCta {
+    width: 118px;
+    min-height: 44px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+}
+
+/* ARCSEG — somente mobile: contraste da descrição em Benefícios */
+@media (max-width: 640px) {
+  .benefits > .container > .title > p {
+    color: #425A4C;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Mobile: contraste padronizado nas seções claras
+   Aplica texto mais escuro somente em telas pequenas e apenas
+   nas seções com fundo claro.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Parágrafos e descrições das seções claras */
+  .benefits .title > p,
+  .proof .title > p,
+  .training .title > p,
+  .solutions .title > p,
+  .social .title > p,
+  .faq .title > p {
+    color: #425A4C !important;
+  }
+
+  /* Textos descritivos dentro dos cards das seções claras */
+  .benefits .four p,
+  .proof .reviews article > p,
+  .proof .videoCard > small,
+  .training .trainingGrid p,
+  .solutions .solutionGrid p,
+  .social .socialGrid article p,
+  .faq .faqItem > div p {
+    color: #425A4C !important;
+  }
+
+  /* Textos auxiliares / métricas nas seções claras */
+  .proof .score span,
+  .proof .person small,
+  .social .socialGrid aside span,
+  .social .socialGrid aside small {
+    color: #425A4C !important;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Mobile: cards compactos na seção de benefícios
+   Só afeta a grade "Por que escolher a ARCSEG?" em celulares.
+   Desktop e outras seções permanecem iguais.
+   ============================================================ */
+@media (max-width: 640px) {
+  .benefits .credibilityGrid article {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "icon title number"
+      "description description description";
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 9px;
+    min-height: 0;
+    padding: 17px 18px;
+  }
+
+  /* Ícone à esquerda do título, sem ocupar uma linha extra */
+  .benefits .credibilityGrid article > .icon {
+    grid-area: icon;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  .benefits .credibilityGrid article > h3 {
+    grid-area: title;
+    min-width: 0;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  /* O número continua no canto direito, sem se sobrepor ao título */
+  .benefits .credibilityGrid article > small {
+    grid-area: number;
+    position: static;
+    justify-self: end;
+    align-self: start;
+    margin: 0;
+    font-size: 10px;
+  }
+
+  /* Descrição logo abaixo do conjunto ícone + título */
+  .benefits .credibilityGrid article > p {
+    grid-area: description;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+
+/* ============================================================
+   ARCSEG — MOBILE: legibilidade nas seções de fundo escuro
+   Preserva desktop, Hero e textos de formulários em fundo claro.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Textos logo abaixo dos títulos escuros */
+  .campaign .title.light > p,
+  .autonomo .title.light > p,
+  .lead .title.light > p {
+    color: #BEDDCD;
+  }
+
+  /* Descrições dos cards em áreas escuras */
+  .campaign .slider article p,
+  .autonomo .proCards article p {
+    color: #BEDDCD;
+  }
+
+  /* Indicadores e rótulos auxiliares das áreas escuras */
+  .stats .statGrid span,
+  .lead .contacts small {
+    color: #BEDDCD;
+  }
+
+  /* CTA de fundo verde vibrante precisa de texto ainda mais claro */
+  .final p,
+  .final p.finalContact {
+    color: #E7FFF3;
+  }
+
+  /* Rodapé com fundo verde-petróleo */
+  footer .footerGrid p,
+  footer .footerGrid button,
+  footer .bottom,
+  footer .bottom > span {
+    color: #BEDDCD;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Mobile: carrossel de campanhas compacto e por toque
+   Afeta somente telas <= 640px. Desktop mantém botões e layout.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* As setas somem no celular; gesto de deslizar + indicadores permanecem. */
+  .campaign .arrows {
+    display: none;
+  }
+
+  .campaign .heading {
+    margin-bottom: 25px;
+  }
+
+  .campaign .slider {
+    min-height: 270px;
+    touch-action: pan-y;
+  }
+
+  .campaign .slider article {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 8px;
+    padding: 16px 16px 12px;
+  }
+
+  .campaign .slider .round {
+    width: 46px;
+    height: 46px;
+  }
+
+  .campaign .slider h3 {
+    margin-top: 2px;
+    font-size: 21px;
+    line-height: 1.16;
+    letter-spacing: -0.5px;
+  }
+
+  .campaign .slider article small {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .campaign .slider article p {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .campaign .slider article button {
+    min-height: 28px;
+    margin-top: 6px;
+    padding: 0;
+    font-size: 11px;
+  }
+
+  /* Indicadores com área de toque maior, sem aumentar sua aparência. */
+  .campaign .dots {
+    gap: 4px;
+    margin-top: 12px;
+  }
+
+  .campaign .dots button,
+  .campaign .dots button.active {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 28px;
+    background: transparent;
+  }
+
+  .campaign .dots button.active {
+    width: 45px;
+  }
+
+  .campaign .dots button::after {
+    content: "";
+    width: 24px;
+    height: 3px;
+    background: #2E5B49;
+  }
+
+  .campaign .dots button.active::after {
+    width: 40px;
+    background: var(--green);
+  }
+}
+
+/* Mais espaço para o texto dos cards em celulares bem estreitos. */
+@media (max-width: 360px) {
+  .campaign .slider {
+    min-height: 285px;
+  }
+  .campaign .slider article {
+    padding: 15px 15px 11px;
+  }
+  .campaign .slider h3 {
+    font-size: 20px;
+  }
+  .campaign .slider article p {
+    font-size: 12.5px;
+  }
+}
+
+/* ============================================================
+   Depoimentos escritos — mostrar 2 no celular, expandir ao toque
+   Desktop continua exibindo todos os depoimentos.
+   ============================================================ */
+.reviewsMore {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .testimonials .reviews:not(.reviewsExpanded) > article:nth-child(n + 3) {
+    display: none;
+  }
+
+  .testimonials .reviewsMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: min(100%, 290px);
+    min-height: 44px;
+    margin: 18px auto 0;
+    padding: 9px 16px;
+    border: 1px solid #008A55;
+    border-radius: 5px;
+    background: #E9FFF4;
+    color: #007F50;
+    font: 700 12px/1.35 'Manrope', sans-serif;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease;
+  }
+
+  .testimonials .reviewsMore:hover {
+    background: #D7FAE9;
+  }
+
+  .testimonials .reviewsMore:focus-visible {
+    outline: 3px solid #00D67F;
+    outline-offset: 3px;
+  }
+
+  .testimonials .reviewsMore[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+}
+
+/* ARCSEG — centralização do CTA na seção Autônomo (somente mobile) */
+@media (max-width: 640px) {
+  .autonomo .split > div:first-child > .btn.green {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+
+/* ============================================================
+   ARCSEG — Treinamentos: versão mobile compacta
+   As regras abaixo não modificam o layout desktop.
+   ============================================================ */
+.training .title > .trainingMobileText {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  /* Texto resumido em 2–3 linhas; conteúdo desktop preservado. */
+  .training .title > .trainingDesktopText {
+    display: none;
+  }
+
+  .training .title > .trainingMobileText {
+    display: block;
+    font-size: 15px;
+    line-height: 1.55;
+    margin-top: 15px;
+  }
+
+  /* Menos espaço entre a introdução e os cards. */
+  .training .trainingGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 24px;
+  }
+
+  /* O título vai ao lado do ícone; descrição logo abaixo. */
+  .training .trainingGrid > article {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 5px;
+    min-height: 0;
+    padding: 15px 17px;
+  }
+
+  .training .trainingGrid > article > .icon {
+    grid-column: 1;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  .training .trainingGrid > article > h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .training .trainingGrid > article > p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 2px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Soluções corporativas: cards compactos no mobile
+   Ícone e título lado a lado; descrição e CTA abaixo.
+   ============================================================ */
+@media (max-width: 640px) {
+  .solutions .solutionGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .solutions .solutionGrid > article {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "icon title number"
+      "description description description"
+      "cta cta cta";
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 6px;
+    min-height: 0;
+    padding: 15px 17px;
+  }
+
+  .solutions .solutionGrid > article > .icon {
+    grid-area: icon;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  .solutions .solutionGrid > article > h3 {
+    grid-area: title;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .solutions .solutionGrid > article > small {
+    grid-area: number;
+    position: static;
+    align-self: start;
+    justify-self: end;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .solutions .solutionGrid > article > p {
+    grid-area: description;
+    margin: 2px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .solutions .solutionGrid > article > button {
+    grid-area: cta;
+    width: fit-content;
+    min-height: 28px;
+    margin-top: 4px;
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Marcas e parceiros compactos (somente mobile)
+   Intelbras em destaque, outras marcas em duas colunas.
+   Desktop preservado.
+   ============================================================ */
+@media (max-width: 640px) {
+  .partners .partnerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .partners .partnerGrid > article {
+    min-width: 0;
+    min-height: 104px;
+    padding: 16px 12px;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .partners .partnerGrid > article > b {
+    font-size: 16px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .partners .partnerGrid > article > span {
+    margin-top: 0;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .partners .partnerGrid > article > svg {
+    margin-bottom: 0;
+  }
+
+  /* Marca principal ganha largura total, mas sem excesso de altura */
+  .partners .partnerGrid > .intelbrasPartner {
+    grid-column: 1 / -1;
+    min-height: 98px;
+    padding: 16px;
+    gap: 7px;
+  }
+
+  .partners .partnerGrid > .intelbrasPartner > b {
+    font-size: 27px;
+    line-height: 1.1;
+  }
+
+  .partners .partnerGrid > .intelbrasPartner > span {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 350px) {
+  .partners .partnerGrid > article {
+    padding-inline: 9px;
+  }
+
+  .partners .partnerGrid > article > b {
+    font-size: 14px;
+  }
+}
+
+/* ============================================================
+   ARCSEG — Redes/Canais: cards compactos no mobile
+   ============================================================ */
+@media (max-width: 640px) {
+  .social .socialGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .social .socialGrid article {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "icon title"
+      "description description"
+      "cta cta";
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 16px 17px;
+  }
+
+  .social .socialGrid article > .icon {
+    grid-area: icon;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  .social .socialGrid article > h3 {
+    grid-area: title;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .social .socialGrid article > p {
+    grid-area: description;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* O CTA é um link <a>, não um <button>: ocupa as duas colunas. */
+  .social .socialGrid article > .socialLink {
+    grid-area: cta;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: max-content;
+    max-width: 100%;
+    margin-top: 4px;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #008A55;
+    text-decoration: none;
+  }
+
+  .social .socialGrid article > .socialLink svg {
+    flex-shrink: 0;
+  }
+}
+
+/* ARCSEG — Chamada final: informações organizadas apenas no mobile. */
+@media (max-width: 640px) {
+  /* A ligação começa em uma linha própria, sem alterar o texto desktop. */
+  .final .finalDescription .finalPhoneContact {
+    display: block;
+    margin-top: 8px;
+  }
+
+  /* Endereço, e-mail e Instagram em linhas próprias. */
+  .final .finalContact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.55;
+    letter-spacing: 0;
+    text-transform: none;
+    overflow-wrap: anywhere;
+  }
+
+  .final .finalContactSeparator {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   ARCSEG — CTA corporativo no lugar do antigo carrossel
+   Ajuste para desktop e mobile, sem alterar as demais seções.
+   ============================================================ */
+.campaign.campaignCta {
+  padding: 66px 0;
+  background: linear-gradient(110deg, #071D1A 0%, #0C2E27 72%, #0B3B2B 100%);
+}
+
+.campaignCtaInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campaignCtaCopy {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.campaignCta h2 {
+  margin: 0;
+  color: #FFFFFF;
+  font: 600 clamp(28px, 3.2vw, 42px)/1.12 'Space Grotesk', sans-serif;
+  letter-spacing: -1.2px;
+}
+
+.campaignCta p {
+  margin-top: 14px;
+  color: #BEDDCD;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .campaign.campaignCta {
+    padding: 40px 0;
+  }
+
+  .campaignCta h2 {
+    font-size: clamp(25px, 7vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.7px;
+  }
+
+  .campaignCta p {
+    margin-top: 11px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+}

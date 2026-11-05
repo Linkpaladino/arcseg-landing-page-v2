@@ -1,0 +1,29 @@
+
+# Dependências
+node_modules/
+
+# Arquivos gerados pelo build
+dist/
+build/
+*.tsbuildinfo
+
+# Cache
+.cache/
+.vite/
+
+# Logs
+logs/
+*.log
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+    
